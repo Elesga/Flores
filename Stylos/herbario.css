@@ -1,0 +1,1554 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: "freemetto";
+	src: url("fonts/freemetto.eot");
+	src: url("fonts/freemetto.eot?#iefix") format("embedded-opentype"),
+	     url("fonts/freemetto.woff") format("woff"),
+	     url("fonts/freemetto.ttf") format("truetype"),
+	     url("fonts/freemetto.svg#freemetto") format("svg");
+}
+
+/* Freemetto es una fuente de Mauro Rizzi bajo licencia GPL with font exception de Fontlibrary https://fontlibrary.org/es/font/freemetto */
+
+
+/* CSS Document */
+
+
+/* Estilo de las imagenes adaptativo */
+
+img, object {
+	max-width: 97%;
+}
+
+
+/* hr gradient color1 - color2 - color1 */
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+	background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+	clear: both;
+}
+
+
+
+/* Estilos para los textos en cursiva y negrita*/
+
+.cursiva {
+	/*font-style: italic;*/
+	font-style: verdana;
+}
+
+.cursivaynegrita {
+	/*font-style: italic;*/
+	font-weight: bold;
+	font-style: verdana;
+}
+
+.negrita {
+	font-weight: bold;
+}
+
+
+/* Container general para toda la página, anchura ajustada por debajo de 1280px */
+
+#grid-container {
+	max-width: 1270px;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-image: url("https://res.cloudinary.com/dgmcgqslm/image/upload/v1603536883/Iconos/Din_A4_ElesgaBeig_ClaroG_gphzvw.jpg");
+}	
+
+.container-cat {
+		
+		padding: 0px 0px 0px 25px;
+	}	
+
+
+
+/* Container general para toda la página, fondo solo para la página de inicio de herbario */
+
+.index_herbario {
+	background-image: url();
+	
+}
+
+
+/* Estilo del encabezado*/
+
+#header {
+	max-width: 1270px;
+	height: 210px;
+	background-repeat:no-repeat;
+	background-size:100%;
+    background-position:center;
+    
+}
+
+#encabezado {
+	text-align: left;
+	padding: 10px 0 0 70px;
+	margin: 0px;
+	font-weight: normal;
+	font-variant: small-caps;
+	font-family: 'freemetto',Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	text-shadow: #FFFFFF 0 0 5px;
+	color: #fcfafa;
+	font-size: 4em;
+}
+
+#sub_encabezado {
+	text-align: left;
+	padding: 0 0 10px 50px;
+	margin: 0px;
+	font-weight: normal;
+	font-variant: normal;
+	font-family: 'freemetto',Arial, Helvetica, sans-serif;
+    font-style: normal;
+	letter-spacing: 2px;
+	color: #f8f3f3;
+	font-size: 2em;
+}
+
+@media screen and (max-width: 600px) {
+
+#header {
+	background-color: #666666;
+	height: 100px;
+}
+
+#encabezado {
+	text-align: left;
+	padding: 5px 0 0 10px;
+	margin: 0px;
+	font-weight: normal;
+	font-variant: small-caps;
+	font-family: 'freemetto',Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	text-shadow: #FFFFFF 0 0 10px;
+	color: #333333;
+	font-size: 3em;
+}
+
+#sub_encabezado {
+	text-align: left;
+	padding: 0 0 0 10px;
+	margin: 0px;
+	font-weight: normal;
+	font-variant: normal;
+	font-family: 'freemetto',Arial, Helvetica, sans-serif;
+    font-style: normal;
+	color: #333333;
+	font-size: 0.9em;
+}
+
+}
+
+
+/* menu-bar barra de navegación general para resolución por encima de 824px */
+
+/* para que la barra de móvil no se muestre en escritorio */
+ 
+.menu_bar {
+	display:none;
+}
+ 
+/* estilo del contenedor del menú */
+
+nav {
+	width: auto;
+	height: auto;
+	max-width:1280px;
+	margin:0px auto;
+	padding: 0px 0px 0px 5px;
+	background: #333333;
+	z-index: 10; /* z-index mayor que el otro*/
+}
+ 
+/* El contenedor flexible de flexbox */
+ 
+.menu {
+	background-color: #333333;
+	
+	list-style:none;
+	margin: 0;
+	padding: 0;
+	
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+/* Elementos flexibles de flexbox */
+
+.menu li {
+	/*display: block;*/
+	list-style:none;
+	
+	margin:0;
+	padding: 5px 5px 5px 0;
+	width: auto;
+	height: auto;
+}
+
+/* Para que no se muestre el desplegable hasta que se pase el ratón por encima */
+
+.menu-item-has-children ul {
+	display: none;
+}
+
+.menu li:hover ul.sub-menu {
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+	left: 8px;
+	right: 8px;
+	background-color: #333333;
+}
+
+/* resto de estilos del menú */
+ 
+.menu a, .sub-menu a {
+	color:#fff;
+	padding:9px 15px;
+	display:block;
+	text-decoration:none;
+	line-height: 100%;
+}
+
+.menu span {
+	margin-right:10px;
+}
+ 
+/*.menu a:hover, .sub-menu a:hover {
+	background: #999;
+	color: #fff;
+	border-radius: 5px;
+}*/
+
+.menu a.inicio {
+	/*color:#fff;
+	background: #99CCFF;
+	color: #333333;
+	border-radius: 5px;*/
+}
+
+.menu a.inicio:hover {
+	background: #999;
+	color: #fff;
+	border-radius: 5px;
+}
+
+
+/* estilos del menú en móviles, estaba a 600 pero lo he subido a 824 */
+
+@media screen and (max-width:824px ) {
+	nav {
+		width:80%;
+		height:100%;
+		left:-100%;
+		margin:0;
+		position: absolute;
+		font-size: 125%;
+	}
+ 
+	nav ul {
+		display: block;
+		float:none;
+		border-bottom:1px solid rgba(255,255,255, .3);
+	}
+	
+	.menu {
+		display: flex;
+		flex-direction: column;
+	}
+ 
+	nav ul li {
+		display: block;
+		float:none;
+		border-bottom:1px solid rgba(255,255,255, .3);
+	}
+	
+	.menu a.inicio {
+		background: #333333;
+		color: #fff;
+	}
+	
+	.menu_bar {
+		display:block;
+		width:100%;
+		background:#ccc;
+	}
+ 
+	.menu_bar .bt-menu {
+		display:block;
+		padding:15px;
+		background:#333333;
+		color:#fff;
+		text-decoration:none;
+		font-weight: bold;
+		font-size:20px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+ 
+	.menu_bar span {
+		float:right;
+		font-size:40px;
+	}
+}
+
+
+
+
+/* Estilo del botón desplegable del nombre científico */
+
+.dropbtn {
+    background-color: #333333;
+    color: white;
+    padding: 8px;
+	margin: 5px 3px 0 3px;
+    border: none;
+    cursor: pointer;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1em;
+	outline: 0;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #999;
+	border-radius: 5px;
+}
+
+.dropdown {
+	z-index: 10; /* z-index mayor que el otro */
+	position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+	background-color: #333;
+	
+	list-style:none;
+	padding: 8px;
+	margin: 0px;
+	
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: none;
+	
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.dropdown-content a {
+	color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+	background-color: #999
+	}
+
+.show {
+	display: flex;
+	position: absolute;
+	max-width: 1254px;
+	margin-left:auto;
+	margin-right:auto;
+	left: 8px;
+	right: 8px;
+	background-color: #333333;
+	}
+
+@media screen and (max-width:600px ) {
+
+.dropbtn {
+		padding: 8px 10px 8px 10px;
+		/*margin: 0 20px 0 0;*/
+		font-size: 1em;
+		width: 100%
+	}
+	
+#myBtn {
+		text-align: left;
+	}
+
+.dropdown {
+		padding: 0 0 5px 0;
+		margin: 0 10px 0 0;
+		border-bottom:1px solid rgba(255,255,255, .3);
+	}
+	
+.show {
+		font-size: 150%;
+		border-bottom:1px solid rgba(255,255,255, .3);
+	}
+	
+}
+
+
+
+/* Estilo de la bandera del idioma*/
+
+.nombre_comun {
+	display: inline-block;
+}
+
+.nombre_comun div{
+	padding: 10px 0 0 0;
+	display: inline-block;
+}
+
+.nombre_comun p{
+	white-space: nowrap;
+	text-align: left;
+}
+
+@media all and (max-width: 800px) {
+	.nombre_comun div {
+		display: block;
+	}
+}
+
+
+
+/*Estilo del título con el nombre de la especie, otros títulos de la página y el resto del texto*/
+
+#titulo {
+	margin: 40px 0 0 0;
+}
+
+
+#especie {
+	text-align: left;
+	padding: 10px 0 10px 0;
+	margin: 10px;
+	font-weight: normal;
+	font-variant: small-caps;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #333333;
+	font-size: 2.2em;
+	
+}
+
+#subapartado {
+	text-align: left;
+	padding: 30px 5px 0 18px;
+	margin: 0px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #999999;
+	font-size: 1.2em;
+	letter-spacing: 0.9px;
+}
+
+#texto {
+	text-align: justify;
+	padding: 10px 18px 0px 18px;
+	margin: 30px;
+	font-weight: normal;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #666666;
+	font-size: 1.0em;
+	/*letter-spacing: 0.9px;*/
+	line-height: 1.6em;
+	/*background-image: url("/StilsNous/img/Din\ A4\ ElesgaBeig\ ClaroG.jpg");*/
+}
+
+#texto_in {
+	text-align: justify;
+	padding: 10px 18px 0px 50px;
+	margin: 0px;
+	font-weight: normal;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #666666;
+	font-size: 1.0em;
+	/*letter-spacing: 0.9px;*/
+	line-height: 1.6em;
+}
+
+#Bibliografia {
+	text-align: justify;
+	padding: 10px 18px 0 18px;
+	margin: 0px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #333333;
+	font-size: 0.9em;
+	letter-spacing: 0.9px;
+}
+
+#presentacion {
+	max-width: 100%;
+	padding: 0 0 0 45px;
+}
+
+#presentacion div {
+	display: inline;
+}
+
+#presentacion_foto {
+	float: left;
+	padding: 20px 20px 20px 0;
+	width: 20%;
+}
+
+#presentacion_texto {
+	vertical-align: text-top;
+	width: 80%;
+}
+
+@media all and (min-width: 601px) and (max-width: 800px) {
+
+#presentacion {
+	max-width: 100%;
+	padding: 0 0 0 15px;
+}
+
+}
+
+@media screen and (max-width: 600px) {
+
+#especie {
+	text-align: left;
+	padding: 20px 0 10px 10px;
+	margin: 0px;
+	font-weight: normal;
+	font-variant: small-caps;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #333333;
+	font-size: 2em;
+}
+
+#subapartado {
+	text-align: left;
+	padding: 0 0 0 13px;
+	margin: 0px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #999999;
+	font-size: 1.2em;
+	letter-spacing: 0.9px;
+}
+
+#texto {
+	text-align: justify;
+	padding: 10px 18px 0 18px;
+	margin: 0px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #333333;
+	font-size: 1em;
+	letter-spacing: 0.9px;
+}
+
+#Bibliografia {
+	text-align: justify;
+	padding: 10px 18px 0 18px;
+	margin: 0px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #333333;
+	font-size: 0.9em;
+	letter-spacing: 0.9px;
+}
+
+
+}
+
+/* Eliminar si no existe en las páginas porque he cambiando algunos id y class*/
+
+/*#presentacion {
+	max-width: 100%;
+	padding: 0 0 0 15px;
+}
+
+#presentacion_foto {
+	width: 25%;
+}
+
+#presentacion_texto {
+	width: 75%;
+}*/
+
+
+
+
+/* Detalle para reducir el tamaño de letra de subespecie */
+
+.reducir {
+	font-size: 0.6em;
+	
+}
+
+
+/*Imagen de portada de cada especie centrada en la página*/
+
+.imagen_especie {
+	padding: 0px 10px 0 10px;
+	display: block;
+	margin: auto;
+}
+
+
+@media screen and (max-width: 600px) {
+	.imagen_especie {
+	display: none;
+	}
+}
+
+
+/* Galeria de fotos de cada especie */
+
+#gallery {
+	padding: 0 10px 0 10px;
+}
+
+
+/* Estilo de los mapas de corologia de cada especie */
+
+.mapas_corologia {
+	float: right;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0 10px 40px 0px;
+}
+
+.texto_corologia {
+	width: 100%;
+	float: left;
+}
+
+@media screen and (max-width: 1100px) {
+	.texto_corologia {
+	width: 60%;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.texto_corologia {
+	width: 50%;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.texto_corologia {
+	width: 100%;
+	float: none;
+	}
+	.mapas_corologia {
+	float: none;
+	clear: both;
+	margin: 20px 15% 40px 15%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.mapas_corologia {
+	margin: 20px 10px 40px 10px;
+	}
+}
+
+
+
+/* FOOTER */
+/* detalle de la imagen del footer centrada */
+
+#footer_detalle  img{
+	display:block;
+	
+	margin-left: 37px;
+	/*margin-right: 36px;*/
+}
+
+#footer_detalle_P  img{
+	display:block;
+	
+	margin-left: 29px;
+	/*margin-right: 36px;*/
+}
+
+/* color general del footer */
+
+#footer_herbario_P {
+	display:block;
+	padding: 0 0px 0 0px;
+	background-color: #2e2e2e;
+	margin-left: 29px;
+	margin-right: 29px;
+	
+}
+
+#footer_herbario {
+	display:block;
+	padding: 0 0px 0 0px;
+	background-color: #2e2e2e;
+	margin-left: 37px;
+	margin-right: 36px;
+	
+}
+
+#footer_herbario_G{
+	display:block;
+	padding: 0 0px 0 0px;
+	background-color: #2e2e2e;
+	margin-left: 29px;
+	margin-right: 29px;
+	
+}
+
+#footer_herbario_F{
+	display:block;
+	padding: 0 0px 0 0px;
+	background-color: #2e2e2e;
+	margin-left: 37px;
+	margin-right: 20px;
+	
+}
+/* estilo flexbox para la firma y los últimos enlaces */
+
+#extras{
+  padding: 10px 10px 10px 0;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row;
+  justify-content: center;
+}
+
+/* estilo para la firma de la página */
+
+#firma p{
+	/*text-align:  left;*/
+	/*vertical-align: text-bottom;*/
+	padding: 0px 10px 0px 10px;
+	margin: 0px 0px 0px 0px;
+	font-weight: normal;
+	font-variant: small-caps;
+	font-family: 'freemetto',Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	/*text-shadow: #FFFFFF 0 0 20px;*/
+	color: #FFFFFF;
+	font-size: 2.7em;
+	/*width: 120px;*/
+	float: left;
+}
+
+
+#license {
+	background-color: #000000;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 10px 0 20px 0;
+}
+
+#license a{
+	text-decoration: none;
+	color: #FF9900;
+}
+
+#license a:hover {
+	color: #fff;
+}
+
+/* Animación de los enlaces del footer */
+
+#firma2 {
+	position: relative;
+	padding: 5px 5px 5px 5px;
+
+}
+.arroba {
+	opacity: 1;
+	transition: .03s ease;
+}
+.firma2-hover {
+  transition: .3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+#firma2:hover .arroba {
+  opacity: 0;
+ 
+}
+#firma2:hover .firma2-hover {
+  opacity: 1;
+ 
+}
+
+
+/* FIN FOOTER */
+
+
+
+
+
+
+/* Estilos para la página de familia */
+
+#genero {
+	text-align: left;
+	padding: 0 0 0px 15px;
+	margin: -1px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: italic;
+	color: #999999;
+	font-size: 1.2em;
+	letter-spacing: 0.9px;
+	background-image: url("/StilsNous/img/Din\ A4\ ElesgaBeig\ ClaroG.jpg");
+}
+
+#nombre_especie_familia {
+	text-align: left;
+	padding: 0 0 0px 15px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    /*font-style: italic;*/
+	color: #999999;
+	font-size: 1.2em;
+}
+
+#nombre_especie_familia_C {
+	text-align: left;
+	padding: 0 0 0px 0px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    /*font-style: italic;*/
+	color: #0f0f0f;
+	font-size: 1em;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+/* Estilos para la flexbox que muestra las fotos de los géneros de cada familia */
+
+#flexbox_genero {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: stretch;
+	background-image: url("/StilsNous/img/Din\ A4\ ElesgaBeig\ ClaroG.jpg");
+	/*padding: 0 4px;*/
+}
+
+#foto_especie_familia {
+	/*flex-grow: 1;*/
+	flex: 24%;
+    max-width: 24%;
+    /*padding: 0 4px;*/
+}
+
+/* Responsive layout - makes a three column-layout instead of four columns */
+@media (max-width: 1100px) {
+    #foto_especie_familia {
+        flex: 32%;
+        max-width: 32%;
+    }
+}
+
+/* Responsive layout - makes a two column-layout instead of three columns */
+@media (max-width: 850px) {
+	#foto_especie_familia {
+        flex: 48%;
+        max-width: 48%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    
+	#flexbox_genero {
+		padding: 0 15px 0 15px;
+	}
+	
+	#foto_especie_familia {
+		flex: 100%;
+        max-width: 100%;
+		flex-grow: 4
+    }
+}
+
+
+/* Animación de la lupa para la foto de cada especie en la lista de géneros por familia */
+
+#foto_especie_familia {
+	margin: 5px 5px 5px 5px;
+	position: relative;
+}
+
+.ajustar_foto img {
+	max-width: 100%;
+
+}
+
+.lupa {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#foto_especie_familia:hover .ajustar_foto .lupa {
+	opacity: 1;
+}
+
+#foto_especie_familia p {
+	transition: color .5s;
+}
+
+#foto_especie_familia:hover p{
+	-webkit-color:#31B404;
+	-moz-color:#31B404;
+	-ms-color:#31B404;
+	-o-color:#31B404;
+	color:#31B404;
+}
+
+
+
+/* Estilo del texto de la página de agradecimientos */
+
+#agradecimientos {
+	text-align: justify;
+	padding: 0px 30px 0 30px;
+	/*margin: -1px;*/
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #333333;
+	font-size: 1em;
+	letter-spacing: 0.9px;
+}
+
+
+
+/* Estilo de las imágenes de flora endémica*/
+
+.flora_endemica {
+	padding: 0 10px 0 10px;
+	display: block;
+	margin: auto;
+}
+
+
+
+
+/* Estilo del texto del slider que muestra las fotos de las novedades */
+/* Comprobar si lo uso porque ahora he puesto otro slider diferente */
+
+#texto_slider {
+	text-align: left;
+	padding: 15px 0 10px 15px;
+	margin: 0px;
+	font-weight: normal;
+	font-variant: small-caps;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #fff;
+	font-size: 2.2em;
+}
+
+
+
+
+
+
+
+/* Estilos para la página de inicio del herbario. Comparte gran parte de lo anterior, pero tiene algunas cosas propias */
+
+
+/* Estilo para la presentacion de la bellota */
+
+#presentacion {
+	padding: 0 20px 20px 20px;
+}
+
+.foto_float {
+	float: left;
+	padding: 10px 20px 30px 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Responsive layout - para romper el float de las fotos de las bellotas */
+@media (max-width: 600px) {
+    
+	#presentacion {
+	padding: 0 0px 50px 0px;
+	}
+	.foto_float {
+		width: 100%;
+		padding: 0 0px 15px 0px;
+	}
+	.bellotas {
+		display:block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.texto_bienvenida {
+		clear: both;
+	}
+}
+
+
+
+/* Estilo para separar el slider pro de los márgenes de la página y añadir el texto novedades sobre el slider */
+
+#margen-slider-pro {
+	padding: 0 10px 0 10px;
+	position: relative;
+}
+
+#novedades {
+	position: absolute;
+	color: #ffffff;
+	font-family: system-ui , Arial, sans-serif;
+	font-size: 2em;
+	font-variant: small-caps;
+	top: 3%;
+	left: 3%;
+	/*right: 10%;*/
+	z-index: 2; /* solo para que aparezca el texto "novedades" sobre las fotos del slider de novedades */
+}
+
+@media (max-width: 500px) {
+  #novedades {
+	font-size: 1.5em;
+	top: 2%;
+	left: 5%;
+  }
+}
+
+
+
+/* Estilos para la flexbox que muestra las fotos animadas con enlaces de la página principal */
+
+#flexbox_presentacion {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: stretch;
+	padding: 0 0 60px 0;
+}
+
+#foto_presentacion {
+	/*flex-grow: 1;*/
+	flex: 33.3%;
+    max-width: 33.3%;
+    /*padding: 0 0px;*/
+}
+
+/* Responsive layout - makes a three column-layout instead of four columns */
+@media (max-width: 1000px) {
+    #foto_presentacion {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes a two column-layout instead of three columns */
+@media (max-width: 850px) {
+	#foto_presentacion {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 750px) {
+    
+	#flexbox_presentacion {
+		padding: 0 0 60px 0;
+	}
+	
+	#foto_presentacion {
+		/*flex-grow: 4;*/
+		flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+/* Estilos para la animación de los enlaces de la página principal */
+
+#item {
+	padding: 60px 10px 20px 10px;
+}
+
+figure.snip1190 {
+  font-family: system-ui , Arial, sans-serif;
+  font-size: 1.4em;
+  color: #fff;
+  position: relative;
+  /*float: left;*/
+  overflow: hidden;
+  margin: 0px 0px;
+  /*min-width: 220px;*/
+  /*max-width: 98%;*/
+  /*max-height: 220px;*/
+  width: 100%;
+  /*background: #333333;*/
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+}
+figure.snip1190 * {
+  /*-webkit-box-sizing: padding-box;
+  box-sizing: padding-box;*/
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+figure.snip1190 img {
+  opacity: 1;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+figure.snip1190 figcaption {
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+figure.snip1190 h2 {
+  font-size: 1.4em;
+  font-weight: 400;
+  left: 0;
+  right: 0;
+  letter-spacing: -1px;
+  margin: 0 auto;
+  position: absolute;
+  /*text-transform: uppercase;*/
+  font-variant: small-caps;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+}
+figure.snip1190 h2 span {
+  font-weight: 400;
+}
+figure.snip1190 p {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  margin: 0 auto;
+  top: 50%;
+  opacity: 0;
+  font-size: 18px;
+  -webkit-transform: translateY(-20%) scale(0.7);
+  transform: translateY(-20%) scale(0.7);
+}
+/*figure.snip1190 .square {
+  height: 78px;
+  width: 78px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  -webkit-transform: rotate(45deg) translate(-50%, -50%);
+  transform: rotate(45deg) translate(-50%, -50%);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+figure.snip1190 .square:before,
+figure.snip1190 .square:after,
+figure.snip1190 .square div:before,
+figure.snip1190 .square div:after {
+  background-color: #ffffff;
+  position: absolute;
+  content: "";
+  display: block;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+figure.snip1190 .square:before,
+figure.snip1190 .square:after {
+  width: 65%;
+  height: 2px;
+}
+figure.snip1190 .square div:before,
+figure.snip1190 .square div:after {
+  width: 2px;
+  height: 65%;
+}
+figure.snip1190 .square:before,
+figure.snip1190 .square div:before {
+  left: 0;
+  top: 0;
+}
+figure.snip1190 .square:after,
+figure.snip1190 .square div:after {
+  bottom: 0;
+  right: 0;
+}*/
+figure.snip1190 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+figure.snip1190:hover img,
+figure.snip1190.hover img {
+  opacity: 1;
+  /*-webkit-transform: scale(1);
+  transform: scale(1);*/
+}
+figure.snip1190:hover h2,
+figure.snip1190.hover h2 {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+figure.snip1190:hover p,
+figure.snip1190.hover p {
+  opacity: 1;
+  -webkit-transform: translateY(0px) scale(1);
+  transform: translateY(0px) scale(1);
+}
+
+@media (max-width: 1000px) {
+  figure.snip1190 h2 {
+	font-size: 1.4em;
+  }
+  
+  figure.snip1190 p {
+	font-size: 18px;
+  }
+}
+
+@media (max-width: 750px) {
+  figure.snip1190 h2 {
+	font-size: 1.4em;
+  }
+  figure.snip1190 p {
+	font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  figure.snip1190 h2 {
+	font-size: 1em;
+  }
+  figure.snip1190 p {
+	font-size: 14px;
+  }
+}
+
+
+
+/* Estilo del navegador bajo la barra de menu */
+
+#navegador {
+	position: absolute;
+	display: inline;
+	text-align: left;
+	padding: 0px 0px 0px 20px;
+	margin: 0px;
+	font-weight: normal;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #666666;
+	font-size: 0.8em;
+	z-index: 9; /* z-index menor que el de la barra de navegación */
+}
+
+#navegador a {
+	text-decoration: none;
+	color: #0066FF;
+}
+
+#navegador a:hover {
+	color: #057b2c;
+}
+
+.separador {
+	font-size: 0.7em;
+}
+
+@media all and (max-width: 600px) {
+
+#navegador {
+	display: none;
+}
+
+}
+
+
+/* Estilo del enlace de bloque del listado de familias */
+
+#fill_div_texto {
+	text-align: left;
+	padding: 0 0 0px 80px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    /*font-style: italic;*/
+	color: #999999;
+	font-size: 1em;
+}
+
+a.fill_div:link, a.fill_div:visited {
+  width: 100%;
+  /*background-color: #fff;
+  color: white;
+  text-align: center;*/
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.fill_div:hover, a.fill_div:active {
+  background-color: #E6FAC8; /*#C8FAC8;*/
+  opacity: 0.6;
+}
+
+a.fill_div:hover #fill_div_texto {
+	color: #329632;
+	font-weight: bold;
+}
+
+
+
+.pteridofitas {
+	background: url("../herbario/images/varios/pteridofitas_lamina.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.gimnospermas {
+	background: url("../herbario/images/varios/gimnospermas_lamina.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.dicotiledoneas {
+	background: url("../herbario/images/varios/dicotiledoneas_lamina.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.monocotiledoneas {
+	background: url("../herbario/images/varios/monocotiledoneas_lamina.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilo del span del título de la lista de nombres científicos */
+
+.lista_nombre_cientifico {
+	font-size: 0.6em;
+}
+.letra {
+	font-size: 1.5em;
+}
+
+/* Estilo de los vínculos del abecedario del nombre común*/
+
+.abecedario:link {
+	color: #999999;
+}
+.abecedario:visited {
+	color: #999999;
+}
+.abecedario:hover {
+	color: #000000;
+}
+
+/* Estilo de las imágenes de libros y enlaces en la sección de bibliografía y enlaces*/
+
+.libros {
+	display: -webkit-flex;
+    -webkit-flex-direction: row;
+    display: flex;
+    flex-direction: row;
+	padding-bottom: 10px;
+}
+.libros_foto {
+	width: 220px;
+	min-width: 220px;
+}
+
+/* Estilo del texto de las referencias de los libros en la sección de bibliografía y enlaces*/
+
+.texto_libros {
+	text-align: left;
+	padding: 5px 5px 0px 10px;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: italic;
+	color: #999999;
+	font-size: 0.9em;
+	letter-spacing: 0.9px;
+}
+
+/* Estilo de la foto de presentación de las rutas botánicas y del resto de fotos de la ruta */
+
+.foto_presentacion_ruta {
+	padding: 20px 10px 20px 10px;
+	display: block;
+	margin: auto;
+}
+
+/* Estilo del mapa de Wikiloc */
+
+.mapa_wikiloc {
+	padding: 20px 20px 20px 20px;
+	display: block;
+	margin: auto;
+}
+
+
+/*Estilo del contenido de la ficha*/
+
+#flexbox {
+	margin: 0 0 50px 0
+	}
+
+.flexbox {
+	
+	display: box;
+	box-orient: horizontal;
+	
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	
+	display: -moz-box;
+	-moz-box-orient: horizontal;
+	
+	border-bottom: 1px solid #999999;
+	padding: 5px 0 5px 0;
+	max-width: 100%;
+}
+
+.flexbox> div {
+	box-flex: 1;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+}
+
+#ficha_a, #ficha_b, #ficha_a1, #ficha_b1 {
+	text-align: justify;
+	font-weight: normal;
+	font-variant: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-style: normal;
+	color: #666;
+	font-size: 1.0em;
+	line-height: 1.6em;
+}
+
+#ficha_a, #ficha_a1 {
+	width: 110px;
+	padding: 0 0 0 17px;
+}
+
+#ficha_b, #ficha_b1 {
+	width: 75%;
+	padding: 0 23px 0 10px;
+}
+
+@media all and (max-width: 300px) {
+
+.flexbox {
+	
+	display: box;
+	box-orient: vertical;
+	
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	
+	display: -moz-box;
+	-moz-box-orient: vertical;
+}
+
+#ficha_a, #ficha_a1 {
+	width: 110px;
+	padding: 0 0 0 17px;
+}
+
+#ficha_b, #ficha_b1 {
+	width: 85%;
+	padding: 0 0 0 17px;
+}
+
+}
